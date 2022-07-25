@@ -30,7 +30,7 @@ class ClosedPrViewModel @Inject constructor(
 
         viewModelScope.launch {
             withContext(dispatcherProvider.io) {
-                fetchClosedPullRequestRepository.fetchClosedPr().catch {
+                fetchClosedPullRequestRepository.fetchClosedPr().catch{
                     _allClosedPr.postValue(ApiResult.Error(ERROR_MESSAGE))
                 }.collectLatest {
                     _allClosedPr.postValue(ApiResult.Success(it))
