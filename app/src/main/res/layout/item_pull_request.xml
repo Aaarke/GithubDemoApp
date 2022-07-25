@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="pullRequestData"
+            type="com.roshan.githubdemoapp.datalib.model.PullRequest" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_user"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:minWidth="@dimen/dimen_150_dp"
+            android:minHeight="@dimen/dimen_150_dp"
+            android:padding="@dimen/dimen_5_dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/dimen_10_dp"
+            android:layout_weight="2"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/iv_user">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/title"
+                style="@style/TITLE"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/title" />
+
+            <com.google.android.material.textview.MaterialTextView
+                style="@style/TITLE"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/created_date" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/created_date"
+                style="@style/TITLE"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold|italic"
+                android:text="@{pullRequestData.created_date}"
+                tools:text="09-11-12" />
+
+            <com.google.android.material.textview.MaterialTextView
+                style="@style/TITLE"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/closed_date" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/closed_date"
+                style="@style/TITLE"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold|italic"
+                android:text="@{pullRequestData.closed_date}"
+                tools:text="09-11-12" />
+
+            <com.google.android.material.textview.MaterialTextView
+                style="@style/TITLE"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/username" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/user"
+                style="@style/TITLE"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{pullRequestData.user.name}"
+                tools:text="@string/by_aaarke"
+                android:textStyle="bold|italic" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
