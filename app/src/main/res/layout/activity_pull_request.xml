@@ -6,9 +6,10 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".PullRequestActivity">
+        tools:context=".view.ui.PullRequestActivity">
 
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_closed_pr"
             android:layout_width="@dimen/dimen_0_dp"
             android:layout_height="@dimen/dimen_0_dp"
             app:layout_constraintBottom_toBottomOf="parent"

@@ -5,4 +5,5 @@ import kotlinx.coroutines.flow.flow
 import javax.inject.Inject
 
 class FetchPullRequestRepository @Inject constructor(private val pullRequestService: PullRequestService) {
+
 }
